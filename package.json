@@ -24,6 +24,7 @@
     "@types/passport-jwt": "^3.0.3",
     "@types/uuid": "^8.0.0",
     "nodemon": "^2.0.4",
+    "prettier": "2.0.5",
     "typescript": "^3.9.5"
   },
   "dependencies": {
