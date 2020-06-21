@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import { IUsuario } from "../interface/usuario.interface";
 
 const usuarioSchema = new Schema({
-    email: {
+    rut: {
         type: String,
         unique: true,
         required: true,
@@ -28,7 +28,7 @@ usuarioSchema.pre<IUsuario>("save", async function(next) {
     next();
   });
   
-  usuarioSchema.methods.comparePassword = async function(
+  usuarioSchema.methods.compararPassword = async function(
     password: string
   ): Promise<Boolean> {
     return await bcrypt.compare(password, this.password);
