@@ -1,10 +1,22 @@
-import {connect} from 'mongoose';
+import mongoose, { ConnectionOptions } from "mongoose";
 
-export async function startConnection(){
-    await connect('mongodb://localhost/Drogueria', {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    });
-    console.log('base de datos conectada');
-}
+import config from "./config/config";
 
+const dbOptions: ConnectionOptions = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+};
+
+mongoose.connect(config.DB.URI, dbOptions);
+
+const connection = mongoose.connection;
+
+connection.once("open", () => {
+  console.log("MongoDB conectado!");
+});
+
+connection.on("error", (error) => {
+  console.error(error);
+  process.exit(0);
+});
