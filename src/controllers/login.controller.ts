@@ -29,13 +29,13 @@ export const ingresar = async (req: Request, res: Response): Promise<Response> =
 	};
 	if (!req.body.rut || !req.body.password) {
 		respuestaLogin.mensaje = 'Indique email y contraseña.';
-		return res.status(400).json(respuestaLogin);
+		return res.status(200).json(respuestaLogin);
 	}
 
 	const user = await Usuario.findOne({ rut: req.body.rut });
 	if (!user) {
 		respuestaLogin.mensaje = 'El usuario indicado no existe.';
-		return res.status(400).json(respuestaLogin);
+		return res.status(200).json(respuestaLogin);
 	}
 
 	const isMatch = await user.compararPassword(req.body.password);
@@ -45,7 +45,7 @@ export const ingresar = async (req: Request, res: Response): Promise<Response> =
 		return res.status(200).json(respuestaLogin);
 	}
 	respuestaLogin.mensaje = 'El email o contraseña indicados estan incorrectos.';
-	return res.status(400).json(respuestaLogin);
+	return res.status(200).json(respuestaLogin);
 };
 
 export const registrar = async (req: Request, res: Response): Promise<Response> => {
