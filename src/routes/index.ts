@@ -12,7 +12,7 @@ router.route("/photos").post(multer.single("image"), createPhoto).get(getPhotos)
 router.route("/photos/:id").get(getPhoto);
 
 router.route('/articulo/lista').get(obtenerArticulos);
-router.route('/articulo').post(crearArticulo);
+router.route('/articulo/crearArticulo').post(crearArticulo);
 
 router.route('/login').post(ingresar);
 
