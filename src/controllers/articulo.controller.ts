@@ -16,6 +16,7 @@ export async function obtenerArticulos(req: Request, res: Response) {
 export async function crearArticulo(req: Request, res: Response) {
 	try {
 		const { codigoBarra, nombre, descripcion, cantidad, lote, responsable } = req.body;
+
 		const articuloNuevo = {
 			codigoBarra: codigoBarra,
 			nombre: nombre,
@@ -37,12 +38,11 @@ export async function crearArticulo(req: Request, res: Response) {
 		const articulo = new Articulo(articuloNuevo);
 		await articulo.save();
 
-		return res.send(200).json({
-			mensaje: 'Articulo creado',
-			articulo: articulo,
+		return res.json({
+			mensaje: 'Articulo creado'
 		});
 	} catch (error) {
-		return res.send(200).json({
+		return res.json({
 			mensaje: 'Error al crear articulo.',
 			error: error,
 		});
