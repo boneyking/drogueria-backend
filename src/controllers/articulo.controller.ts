@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import Articulo from '../models/Articulo';
-import { v4 as uuidv4 } from 'uuid';
 
 export async function obtenerArticulos(req: Request, res: Response) {
 	try {
@@ -9,7 +8,7 @@ export async function obtenerArticulos(req: Request, res: Response) {
 	} catch (error) {
 		return res.json({
 			mensaje: 'Error al obtener articulos.',
-			error,
+			error: error,
 		});
 	}
 }
@@ -23,12 +22,12 @@ export async function crearArticulo(req: Request, res: Response) {
 			descripcion: descripcion,
 			cantidad: cantidad,
 			lote: {
-				id: uuidv4(),
+				id: lote.id,
 				identificador: lote.identificador,
 				fechaVencimiento: lote.fechaVencimiento,
 			},
 			responsable: {
-				usuarioId: uuidv4(),
+				usuarioId: responsable.usuarioId,
 				nombre: responsable.nombre,
 			},
 			activo: true,
@@ -38,14 +37,27 @@ export async function crearArticulo(req: Request, res: Response) {
 		const articulo = new Articulo(articuloNuevo);
 		await articulo.save();
 
-		return res.json({
+		return res.send(200).json({
 			mensaje: 'Articulo creado',
-			articulo,
+			articulo: articulo,
+		});
+	} catch (error) {
+		return res.send(200).json({
+			mensaje: 'Error al crear articulo.',
+			error: error,
+		});
+	}
+}
+
+export async function verificarExistenciaCodigoBarra(req: Request, res: Response) {
+	try {
+		const articulo = await Articulo.findOne({ codigoBarra: req.params.codigoBarra });
+		return res.json({
+			articulo
 		});
 	} catch (error) {
 		return res.json({
-			mensaje: 'Error al crear articulo.',
-			error,
+			mensaje: 'Error al verificar existencia de código de barra.',
 		});
 	}
 }

@@ -2,7 +2,7 @@ import { Router } from "express";
 import { createPhoto, getPhotos, getPhoto } from "../controllers/foto.controller";
 
 import multer from "../libs/multer";
-import { obtenerArticulos, crearArticulo } from "../controllers/articulo.controller";
+import { obtenerArticulos, crearArticulo, verificarExistenciaCodigoBarra } from "../controllers/articulo.controller";
 
 import {ingresar, crearUsuarioInicial} from '../controllers/login.controller';
 
@@ -13,6 +13,7 @@ router.route("/photos/:id").get(getPhoto);
 
 router.route('/articulo/lista').get(obtenerArticulos);
 router.route('/articulo/crearArticulo').post(crearArticulo);
+router.route('/articulo/:codigoBarra').get(verificarExistenciaCodigoBarra);
 
 router.route('/login').post(ingresar);
 
