@@ -11,7 +11,6 @@ const app = express();
 
 // settings
 app.set('port', process.env.PORT || 4000);
-const http = require('http').Server(app);
 
 //middlewares
 app.use(morgan('dev'));
@@ -21,13 +20,18 @@ app.use(express.json());
 app.use(passport.initialize());
 passport.use(passportMiddleware);
 
-
-const io = require('socket.io')(8081);
+const io = require('socket.io')(process.env.PORT || 8081);
 
 io.on('connection', (socket:any) => {
-    console.log('usuario conectado al socket');
-    socket.emit('bienvenido', 'holanda');
-})
+    console.log('Socket conectado: ', socket.connected);
+
+    socket.on('disconnect', () => {
+        console.log('desconectado');
+    });
+
+    // console.log('Socket desconectado: ', socket.disconnected);
+    // socket.emit('connect', 'holanda');
+});
 
 // routes
 app.get('/', (req, res) => {
