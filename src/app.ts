@@ -4,6 +4,7 @@ import cors from 'cors';
 import indexRoutes from './routes/index';
 import passport from 'passport';
 import passportMiddleware from './middlewares/passport';
+import bodyParser from 'body-parser';
 
 // inicializacion
 const app = express();
@@ -19,18 +20,13 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(passport.initialize());
 passport.use(passportMiddleware);
+app.use(bodyParser.json());
 
 const io = require('socket.io')(process.env.PORT || 8081);
 
 io.on('connection', (socket:any) => {
     console.log('Socket conectado: ', socket.connected);
-
-    socket.on('disconnect', () => {
-        console.log('desconectado');
-    });
-
-    // console.log('Socket desconectado: ', socket.disconnected);
-    // socket.emit('connect', 'holanda');
+    socket.emit('connected', { mensaje: 'conectado' });
 });
 
 // routes

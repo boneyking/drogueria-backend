@@ -5,6 +5,7 @@ import multer from "../libs/multer";
 import { obtenerArticulos, crearArticulo, verificarExistenciaCodigoBarra } from "../controllers/articulo.controller";
 
 import {ingresar, crearUsuarioInicial} from '../controllers/login.controller';
+import { crearArsenal } from "../controllers/arsenal.controller";
 
 const router = Router();
 
@@ -18,5 +19,8 @@ router.route('/articulo/:codigoBarra').get(verificarExistenciaCodigoBarra);
 router.route('/login').post(ingresar);
 
 router.route('/crearUsuarioInicial').post(crearUsuarioInicial);
+
+
+router.route('/arsenal/crearArsenal').post(crearArsenal);
 
 export default router;
