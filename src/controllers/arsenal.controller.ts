@@ -44,8 +44,8 @@ export async function obtenerArsenalPaginado(req: Request, res: Response) {
 		const ordenadoPor = {
 			ordenarPor: orden,
 		};
-		const respuestaPaginada: IRespuestaPaginada = {
-			totalDocumentos: await Arsenal.find({}).countDocuments(),
+		const respuestaPaginada: IRespuestaPaginada<IArsenal> = {
+			totalDocumentos: await Arsenal.find({ activo: true }).countDocuments(),
 			totalItems: await Arsenal.find(filtroBusqueda).countDocuments(),
 			items: await Arsenal.find(filtroBusqueda).sort(ordenadoPor).skip(cantidadSaltados).limit(Number(cantidadResultados)),
 		};

@@ -22,6 +22,6 @@ router.route('/crearUsuarioInicial').post(crearUsuarioInicial);
 
 
 router.route('/arsenal/crearArsenal').post(crearArsenal);
-router.route('/arsenal/obtenerArsenalPaginado',).get(obtenerArsenalPaginado);
+router.route('/arsenal/obtenerArsenalPaginado',).post(obtenerArsenalPaginado);
 
 export default router;

@@ -1,5 +1,5 @@
-export interface IRespuestaPaginada{
-	items: Array<any>;
+export interface IRespuestaPaginada<T>{
+	items: Array<T>;
 	totalItems: number;
 	totalDocumentos: number;
 }
