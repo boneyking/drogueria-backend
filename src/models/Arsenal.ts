@@ -10,12 +10,13 @@ const arsenalSchema = new Schema({
 	},
 	nombre: {
 		type: String,
+		unique: true,
 		required: true,
 		trim: true,
 	},
-	arsenalTipo:{
+	arsenalTipo: {
 		type: String,
-		required: true
+		required: true,
 	},
 	responsable: {
 		usuarioId: {
@@ -33,12 +34,16 @@ const arsenalSchema = new Schema({
 	},
 	fechaCreacion: {
 		type: Date,
-		default: new Date()
+		default: new Date(),
 	},
 	fechaModificacion: {
 		type: Date,
-		default: new Date()
+		default: new Date(),
 	},
 });
+
+arsenalSchema.methods.verificaExistenciaArsenal = async function(nombre:string): Promise<Boolean> {
+	return await nombre === this.nombre;
+}
 
 export default model<IArsenal>('Arsenal', arsenalSchema, 'Arsenal');

@@ -8,6 +8,7 @@ export interface IArsenal extends Document {
 	responsable: IResponsable;
 	fechaCreacion: Date;
 	fechaModificacion: Date;
+	verificaExistenciaArsenal: (nombre: string) => Promise<Boolean>;
 }
 
 export enum ArsenalTipo {

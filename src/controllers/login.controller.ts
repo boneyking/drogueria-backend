@@ -84,5 +84,21 @@ export const crearUsuarioInicial = async (req: Request, res: Response): Promise<
 	nuevoUsuario.informacionPersonal.apellidos = 'Tello';
 	nuevoUsuario.informacionPersonal.cargo = 'Administrador';
 	await nuevoUsuario.save();
+
+
+	const usuario2 = await Usuario.findOne({ rut: '158984954' });
+	if (usuario2) {
+		return res.status(400).json({ mensaje: 'Ya existe un usuario registrado con ese Rut.' });
+	}
+
+	const nuevoUsuario2 = new Usuario();
+	nuevoUsuario2.rut = '158984954';
+	nuevoUsuario2.password = '123456';
+	nuevoUsuario2.informacionPersonal.id = uuidv4();
+	nuevoUsuario2.informacionPersonal.nombres = 'Karen';
+	nuevoUsuario2.informacionPersonal.apellidos = 'Whittaker';
+	nuevoUsuario2.informacionPersonal.cargo = 'Administrador';
+	await nuevoUsuario2.save();
+
 	return res.status(200).json({ mensaje: 'usuario creado' });
 };

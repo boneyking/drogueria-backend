@@ -4,18 +4,18 @@ import { IArsenal, ArsenalTipo } from '../interface/arsenal.interface';
 import { v4 as uuidv4 } from 'uuid';
 
 export async function crearArsenal(req: Request, res: Response) {
-	try {
-		const { id, nombre, arsenalTipo, responsable } = req.body;
+	const { id, nombre, arsenalTipo, responsable } = req.body;
+	try {		
 		const arsenalNuevo = {
 			id: id,
-			nombre: nombre,
+			nombre: nombre.toUpperCase(),
 			arsenalTipo: arsenalTipo,
 			responsable: {
 				usuarioId: responsable.usuarioId,
 				nombre: responsable.nombre,
 			},
 		};
-		guardarArsenal(arsenalNuevo);
+		guardarArsenal(arsenalNuevo, res);
 		res.status(200).json({
 			mensaje: 'Ok',
 		});
@@ -23,17 +23,29 @@ export async function crearArsenal(req: Request, res: Response) {
 		const app = require('../app');
 		const socket = app.obtenerSocket();
 
-		socket.emit('arsenalNoCreado', {
-			mensaje: `Error: ${error.message}`,
+		socket.emit(`arsenalNoCreado_${responsable.usuarioId}`, {
+			mensaje: `${error.message}`,
 		});
 		res.status(400).json({ mensaje: error.message });
 	}
 }
 
-function guardarArsenal(arsenalNuevo: any) {
+async function guardarArsenal(arsenalNuevo: any, res: Response) {
 	const app = require('../app');
 	const socket = app.obtenerSocket();
-	const arsenal = new Arsenal(arsenalNuevo);
-	arsenal.save();
-	socket.emit('arsenalCreado', { mensaje: `Se ha creado el arsenal "${arsenal.nombre.toUpperCase()}"` });
+	try {
+		const nombreArsenalExiste = await Arsenal.find({nombre: arsenalNuevo.nombre.toUpperCase()});
+		if(nombreArsenalExiste.length === 0){
+			const arsenal = new Arsenal(arsenalNuevo);
+			await arsenal.save();
+			socket.emit('arsenalCreado', { mensaje: `Arsenal "${arsenal.nombre.toUpperCase()}"` });
+		} else{
+			socket.emit(`arsenalNoCreado_${arsenalNuevo.responsable.usuarioId}`, { mensaje: `Arsenal "${arsenalNuevo.nombre.toUpperCase()}" ya existe.` });
+		}		
+	} catch (error) {
+		socket.emit(`arsenalNoCreado_${arsenalNuevo.responsable.usuarioId}`, {
+			mensaje: `Error: ${error.message}`,
+		});
+		res.status(400).json({ mensaje: error.message });
+	}
 }

@@ -38,4 +38,4 @@ usuarioSchema.methods.compararPassword = async function (password: string): Prom
 	return await bcrypt.compare(password, this.password);
 };
 
-export default model<IUsuario>('Usuario', usuarioSchema);
+export default model<IUsuario>('Usuario', usuarioSchema, 'Usuario');
