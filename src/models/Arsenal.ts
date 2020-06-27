@@ -41,4 +41,4 @@ const arsenalSchema = new Schema({
 	},
 });
 
-export default model<IArsenal>('ArsenalStore', arsenalSchema);
+export default model<IArsenal>('Arsenal', arsenalSchema, 'Arsenal');
