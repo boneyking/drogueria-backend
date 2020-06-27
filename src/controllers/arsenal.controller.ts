@@ -2,10 +2,11 @@ import { Request, Response } from 'express';
 import Arsenal from '../models/Arsenal';
 import { IArsenal, ArsenalTipo } from '../interface/arsenal.interface';
 import { v4 as uuidv4 } from 'uuid';
+import { IRespuestaPaginada } from '../interface/respuesta-paginada.interface';
 
 export async function crearArsenal(req: Request, res: Response) {
 	const { id, nombre, arsenalTipo, responsable } = req.body;
-	try {		
+	try {
 		const arsenalNuevo = {
 			id: id,
 			nombre: nombre.toUpperCase(),
@@ -30,18 +31,45 @@ export async function crearArsenal(req: Request, res: Response) {
 	}
 }
 
+export async function obtenerArsenalPaginado(req: Request, res: Response) {
+	const { pagina, cantidadResultados, filtro, ordenarPor, orden } = req.body;
+	try {
+		const cantidadSaltados = Number(cantidadResultados) * (Number(pagina) - 1);
+		const filtroBusqueda = {
+			nombre: {
+				$regex: filtro.toUpperCase(),
+			},
+			activo: true,
+		};
+		const ordenadoPor = {
+			ordenarPor: orden,
+		};
+		const respuestaPaginada: IRespuestaPaginada = {
+			totalDocumentos: await Arsenal.find({}).countDocuments(),
+			totalItems: await Arsenal.find(filtroBusqueda).countDocuments(),
+			items: await Arsenal.find(filtroBusqueda).sort(ordenadoPor).skip(cantidadSaltados).limit(Number(cantidadResultados)),
+		};
+
+		return res.status(200).json({ mensaje: 'ok', respuestaPaginada: respuestaPaginada });
+	} catch (error) {
+		res.status(400).json({ mensaje: error.message });
+	}
+}
+
 async function guardarArsenal(arsenalNuevo: any, res: Response) {
 	const app = require('../app');
 	const socket = app.obtenerSocket();
 	try {
-		const nombreArsenalExiste = await Arsenal.find({nombre: arsenalNuevo.nombre.toUpperCase()});
-		if(nombreArsenalExiste.length === 0){
+		const nombreArsenalExiste = await Arsenal.find({ nombre: arsenalNuevo.nombre.toUpperCase() });
+		if (nombreArsenalExiste.length === 0) {
 			const arsenal = new Arsenal(arsenalNuevo);
 			await arsenal.save();
 			socket.emit('arsenalCreado', { mensaje: `Arsenal "${arsenal.nombre.toUpperCase()}"` });
-		} else{
-			socket.emit(`arsenalNoCreado_${arsenalNuevo.responsable.usuarioId}`, { mensaje: `Arsenal "${arsenalNuevo.nombre.toUpperCase()}" ya existe.` });
-		}		
+		} else {
+			socket.emit(`arsenalNoCreado_${arsenalNuevo.responsable.usuarioId}`, {
+				mensaje: `Arsenal "${arsenalNuevo.nombre.toUpperCase()}" ya existe.`,
+			});
+		}
 	} catch (error) {
 		socket.emit(`arsenalNoCreado_${arsenalNuevo.responsable.usuarioId}`, {
 			mensaje: `Error: ${error.message}`,

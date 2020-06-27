@@ -46,4 +46,6 @@ arsenalSchema.methods.verificaExistenciaArsenal = async function(nombre:string):
 	return await nombre === this.nombre;
 }
 
+arsenalSchema.index({text: 1, type: -1});
+
 export default model<IArsenal>('Arsenal', arsenalSchema, 'Arsenal');
