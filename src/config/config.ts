@@ -4,5 +4,6 @@ export default {
         URI: process.env.MONGODB_URI || 'mongodb://localhost/Drogueria',
         USER: process.env.MONGODB_USER,
         PASSWORD: process.env.MONGODB_PASSWORD
-    }
+    },
+    CLAVEMAGICA: 'Admindev001'
 }

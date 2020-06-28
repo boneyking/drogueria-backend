@@ -42,7 +42,7 @@ export async function obtenerArsenalPaginado(req: Request, res: Response) {
 			activo: true,
 		};
 		const ordenadoPor = {
-			ordenarPor: orden,
+			nombre: orden,
 		};
 		const respuestaPaginada: IRespuestaPaginada<IArsenal> = {
 			totalDocumentos: await Arsenal.find({ activo: true }).countDocuments(),
