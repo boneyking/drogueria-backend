@@ -35,7 +35,6 @@ export async function obtenerArsenalPaginado(req: Request, res: Response) {
 	const { pagina, cantidadResultados, filtro, ordenarPor, orden } = req.body;
 	try {
 		const cantidadSaltados = Number(cantidadResultados) * (Number(pagina) - 1);
-		console.log(pagina);
 		const filtroBusqueda = {
 			nombre: {
 				$regex: filtro.toUpperCase(),
