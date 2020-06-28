@@ -35,6 +35,7 @@ export async function obtenerArsenalPaginado(req: Request, res: Response) {
 	const { pagina, cantidadResultados, filtro, ordenarPor, orden } = req.body;
 	try {
 		const cantidadSaltados = Number(cantidadResultados) * (Number(pagina) - 1);
+		console.log(pagina);
 		const filtroBusqueda = {
 			nombre: {
 				$regex: filtro.toUpperCase(),
@@ -50,7 +51,7 @@ export async function obtenerArsenalPaginado(req: Request, res: Response) {
 			items: await Arsenal.find(filtroBusqueda).sort(ordenadoPor).skip(cantidadSaltados).limit(Number(cantidadResultados)),
 		};
 
-		return res.status(200).json({ mensaje: 'ok', respuestaPaginada: respuestaPaginada });
+		return res.status(200).json({ items: respuestaPaginada.items, totalDocumentos: respuestaPaginada.totalDocumentos, totalItems: respuestaPaginada.totalItems });
 	} catch (error) {
 		res.status(400).json({ mensaje: error.message });
 	}
