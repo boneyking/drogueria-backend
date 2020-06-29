@@ -16,9 +16,9 @@ module.exports.guardarArsenal = async (arsenalNuevo: any) => {
 			});
 		}
 	} catch (error) {
+		logger.error(`guardarArsenal: ${error.message}`);
 		socket.emit(`arsenalNoCreado_${arsenalNuevo.responsable.usuarioId}`, {
 			mensaje: `Error: ${error.message}`,
 		});
-		logger.error(`guardarArsenal: ${error.message}`);
 	}
 };

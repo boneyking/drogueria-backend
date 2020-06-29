@@ -17,10 +17,12 @@ function crearToken(usuario: IUsuario) {
 		config.jwtSecret,
 		{
 			expiresIn: 86400,
-		}
+		},
+		
 	);
 }
 import { IRespuestaLogin } from '../interface/respuestas/respuesta-login.interface';
+import logger from '../utils/logger';
 
 export const ingresar = async (req: Request, res: Response): Promise<Response> => {
 	const respuestaLogin: IRespuestaLogin = {
