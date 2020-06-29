@@ -1,4 +1,5 @@
 import { Schema } from 'mongoose';
+import arsenalSchema from './arsenal.schema';
 
 const articuloSchema = new Schema({
 	codigoBarra: {
@@ -9,7 +10,7 @@ const articuloSchema = new Schema({
 		trim: true,
 	},
 	nombre: String,
-	descripcion: String,
+	descripcion: arsenalSchema,
 	cantidad: {
 		type: Number,
 		default: 0,
