@@ -1,11 +1,13 @@
 import { Request, Response } from 'express';
 import Articulo from '../models/Articulo';
+import logger from '../utils/logger';
 
 export async function obtenerArticulos(req: Request, res: Response) {
 	try {
 		const articulos = await Articulo.find();
 		return res.json(articulos);
 	} catch (error) {
+		logger.error(error.message);
 		return res.json({
 			mensaje: 'Error al obtener articulos.',
 			error: error,
@@ -42,6 +44,7 @@ export async function crearArticulo(req: Request, res: Response) {
 			mensaje: 'Articulo creado'
 		});
 	} catch (error) {
+		logger.error(error.message);
 		return res.json({
 			mensaje: 'Error al crear articulo.',
 			error: error,
@@ -56,6 +59,7 @@ export async function verificarExistenciaCodigoBarra(req: Request, res: Response
 			articulo
 		});
 	} catch (error) {
+		logger.error(error.message);
 		return res.json({
 			mensaje: 'Error al verificar existencia de código de barra.',
 		});

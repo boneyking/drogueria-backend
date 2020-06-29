@@ -5,6 +5,7 @@ import indexRoutes from './routes/index';
 import passport from 'passport';
 import passportMiddleware from './middlewares/passport';
 import bodyParser from 'body-parser';
+import winston from 'winston';
 
 // inicializacion
 const app = express();
@@ -24,7 +25,7 @@ app.use(bodyParser.json());
 const io = require('socket.io')(process.env.PORT || 8081);
 
 io.on('connection', (socket: any) => {
-	console.log('Socket conectado: ', socket.id);
+	winston.log('Socket conectado: ', socket.id);
 });
 
 // routes

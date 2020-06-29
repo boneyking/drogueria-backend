@@ -1,4 +1,5 @@
 import Arsenal from '../models/Arsenal';
+import logger from '../utils/logger';
 
 module.exports.guardarArsenal = async function guardarArsenal(arsenalNuevo: any, res: Response) {
 	const app = require('../app');
@@ -18,5 +19,6 @@ module.exports.guardarArsenal = async function guardarArsenal(arsenalNuevo: any,
 		socket.emit(`arsenalNoCreado_${arsenalNuevo.responsable.usuarioId}`, {
 			mensaje: `Error: ${error.message}`,
 		});
+		logger.error(`guardarArsenal: ${error.message}`);
 	}
 };

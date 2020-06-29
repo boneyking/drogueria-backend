@@ -3974,7 +3974,7 @@ export function cargarArsenal(req: Request, res: Response) {
 			responsable: { usuarioId: '0000-0000-0000-0000-0000', nombre: 'Administrador' },
 		},
 	];
-
+	
 	arsenales.forEach((element) => {
 		const arsenalNuevo = new Arsenal(element);
 		arsenalNuevo.save();

@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import Recepcion from '../models/Recepcion';
+import logger from '../utils/logger';
 
 export async function crearRecepcion(req: Request, res: Response) {
 	const {id, fechaIngreso, folio, informacionDocumento, articulos, origen, responsable} = req.body;
@@ -21,6 +22,7 @@ export async function crearRecepcion(req: Request, res: Response) {
 			resultado: resultado
 		});
 	} catch (error) {
+		logger.error(error.message);
 		return res.status(400).json({ mensaje: error.message });
 	}
 }
