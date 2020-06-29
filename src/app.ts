@@ -40,6 +40,8 @@ function obtenerSocket() {
 	return io;
 }
 
-module.exports.obtenerSocket = obtenerSocket;
+module.exports.obtenerSocket = () => {
+	return io;
+};
 
 export default app;

@@ -1,7 +1,7 @@
 import Arsenal from '../models/Arsenal';
 import logger from '../utils/logger';
 
-module.exports.guardarArsenal = async function guardarArsenal(arsenalNuevo: any, res: Response) {
+module.exports.guardarArsenal = async (arsenalNuevo: any) => {
 	const app = require('../app');
 	const socket = app.obtenerSocket();
 	try {
