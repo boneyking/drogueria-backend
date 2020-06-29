@@ -7,6 +7,7 @@ import { obtenerArticulos, crearArticulo, verificarExistenciaCodigoBarra } from 
 import {ingresar, crearUsuarioInicial} from '../controllers/login.controller';
 import { crearArsenal, obtenerArsenalPaginado } from "../controllers/arsenal.controller";
 import { cargarProveedores, cargarArsenal } from "../controllers/data-inicial.controller";
+import { crearRecepcion } from "../controllers/recepcion.controller";
 
 const router = Router();
 
@@ -27,5 +28,7 @@ router.route('/arsenal/obtenerArsenalPaginado',).post(obtenerArsenalPaginado);
 
 router.route('/data-inicial/proveedor').post(cargarProveedores);
 router.route('/data-inicial/arsenal').post(cargarArsenal);
+
+router.route('/recepcion').post(crearRecepcion);
 
 export default router;

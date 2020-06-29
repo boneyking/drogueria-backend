@@ -20,7 +20,7 @@ function crearToken(usuario: IUsuario) {
 		}
 	);
 }
-import { IRespuestaLogin } from '../interface/respuesta-login.interface';
+import { IRespuestaLogin } from '../interface/respuestas/respuesta-login.interface';
 
 export const ingresar = async (req: Request, res: Response): Promise<Response> => {
 	const respuestaLogin: IRespuestaLogin = {

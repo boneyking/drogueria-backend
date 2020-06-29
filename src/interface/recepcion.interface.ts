@@ -1,16 +1,16 @@
-import { IProveedor } from "./proveedor.interface";
-import { TipoDocumento } from "../enums/tipo-documento.enum";
-import { TipoOrigen } from "../enums/tipo-origin.enum";
-import { IArticulo } from "./articulo.interface";
+import { InformacionDocumento } from './informacion-documento.interface';
+import { IArticulo } from './articulo.interface';
+import { Origen } from '../enums/origen.enum';
+import { IResponsable } from './responsable.interface';
+import { Document } from 'mongoose';
 
-export interface IRecepcion {
-    id: string;
-    folio: number;
-    proveedor: IProveedor;
-    tipoDocumento: TipoDocumento;
-    numeroDocumento: number;
-    origen: TipoOrigen;
-    fechaRecepcion: Date;
-    articulos: Array<IArticulo>;
-  }
-  
+export interface IRecepcion extends Document {
+	id: string;
+	fechaIngreso: Date;
+	folio: string;
+	informacionDocumento: InformacionDocumento;
+	articulos: Array<IArticulo>;
+	origen: Origen;
+	responsable: IResponsable;
+	fechaTermino: Date;
+}
