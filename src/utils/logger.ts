@@ -13,7 +13,7 @@ const logger = createLogger({
 		new transports.File({
 			maxsize: 5120000,
 			maxFiles: 5,
-			filename: `${__dirname}/../logs/log-drogueria.log`,
+			filename: `${__dirname}/../../logs/log-drogueria.log`,
 		}),
 	],
 });
