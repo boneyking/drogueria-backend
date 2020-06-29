@@ -1,8 +1,14 @@
-import { Schema } from "mongoose";
+import { Schema } from 'mongoose';
 
 const responsableSchema = new Schema({
-    usuarioId: String,
-    nombre: String
+	usuarioId: {
+		type: String,
+		required: true,
+	},
+	nombre: {
+		type: String,
+		required: true,
+	},
 });
 
 export default responsableSchema;

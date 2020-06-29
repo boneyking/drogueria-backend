@@ -1,12 +1,8 @@
 import { Schema } from 'mongoose';
+import idSchema from './id.schema';
 
 const proveedorSchema = new Schema({
-	id: {
-		type: String,
-		unique: true,
-		required: true,
-		trim: true,
-	},
+	id: idSchema,
 	nombre: {
 		type: String,
 		required: true,

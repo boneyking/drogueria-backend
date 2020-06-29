@@ -2,14 +2,10 @@ import responsableSchema from './responsable.schema';
 import articuloSchema from './articulo.schema';
 import proveedorSchema from './proveedor.schema';
 import { Schema } from 'mongoose';
+import idSchema from './id.schema';
 
 const recepcionSchema = new Schema({
-	id: {
-		type: String,
-		unique: true,
-		required: true,
-		trim: true,
-	},
+	id: idSchema,
 	fechaIngreso: {
 		type: Date,
 		required: true,

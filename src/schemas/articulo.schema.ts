@@ -1,7 +1,11 @@
 import { Schema } from 'mongoose';
 import arsenalSchema from './arsenal.schema';
+import loteSchema from './lote.schema';
+import responsableSchema from './responsable.schema';
+import idSchema from './id.schema';
 
 const articuloSchema = new Schema({
+	id: idSchema,
 	codigoBarra: {
 		type: String,
 		unique: true,
@@ -9,44 +13,20 @@ const articuloSchema = new Schema({
 		lowercase: true,
 		trim: true,
 	},
-	nombre: String,
-	descripcion: arsenalSchema,
-	cantidad: {
-		type: Number,
-		default: 0,
-	},
-	lote: {
-		id: {
-			type: String,
-			unique: true,
-			required: true,
-			lowercase: true,
-			trim: true,
-		},
-		identificador: {
-			type: String,
-			unique: true,
-			required: true,
-			lowercase: true,
-			trim: true,
-		},
-		fechaVencimiento: Date,
-	},
-	responsable: {
-		usuarioId: String,
-		nombre: String,
-	},
+	arsenal: arsenalSchema,
+	lote: loteSchema,
 	activo: {
 		type: Boolean,
 		default: true,
 	},
+	responsable: responsableSchema,
 	fechaCreacion: {
 		type: Date,
-		default: new Date()
+		default: new Date(),
 	},
 	fechaModificacion: {
 		type: Date,
-		default: new Date()
+		default: new Date(),
 	},
 });
 

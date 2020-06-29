@@ -1,12 +1,8 @@
 import { Schema } from 'mongoose';
+import idSchema from './id.schema';
 
 const informacionPersonalSchema = new Schema({
-	id: {
-		type: String,
-		unique: true,
-		required: true,
-		trim: true,
-	},
+	id: idSchema,
 	nombres: {
 		type: String,
 		required: true,
