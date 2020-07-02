@@ -5,7 +5,7 @@ import { Document } from 'mongoose';
 export interface IProveedor extends Document {
     id?: string;
     nombre: string;
-    rut: number;
+    rut: string;
     contactos: Array<IInformacionContacto>;
     responsable: IResponsable;
     fechaCreacion: Date;
