@@ -58,9 +58,12 @@ export async function obtenerArsenalPaginado(req: Request, res: Response) {
 export async function buscarArsenalPorNombre(req: Request, res: Response){
 	const { nombre } = req.params;
 	try {
+		let nombreBusqueda = nombre.replace(/\(/g, '\\(').replace(/\)/g, '\\)');
+		
 		const filtroBusqueda = {
 			nombre: {
-				$regex: '^' + nombre.toUpperCase(),
+				$regex: '^' + nombreBusqueda.toUpperCase(),
+				$options: 'i'
 			},
 			activo: true,
 		};
