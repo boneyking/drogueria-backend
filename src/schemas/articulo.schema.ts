@@ -14,7 +14,7 @@ const articuloSchema = new Schema({
 		trim: true,
 	},
 	arsenal: arsenalSchema,
-	lote: loteSchema,
+	lote: [loteSchema],
 	activo: {
 		type: Boolean,
 		default: true,
