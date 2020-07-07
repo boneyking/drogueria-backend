@@ -11,7 +11,6 @@ export function cargarProveedores(req: Request, res: Response) {
 
 	const proveedores = [
 		{
-			id: uuidv4(),
 			nombre: 'ARAMA '.trim().toUpperCase(),
 			rut: '76.070.033-9'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -20,7 +19,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'WINPHARM SPA.'.trim().toUpperCase(),
 			rut: '76.079.782-0'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -29,7 +27,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'COMERCIALIZADORA GHALENO LTDA'.trim().toUpperCase(),
 			rut: '76.095.228-1'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -38,7 +35,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'LUXYPHARM SPA.'.trim().toUpperCase(),
 			rut: '76.105.305-1'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -47,7 +43,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'COMERCIAL REUTTER S.A.'.trim().toUpperCase(),
 			rut: '76.150.425-8'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -56,7 +51,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'LABOFAR'.trim().toUpperCase(),
 			rut: '76.174.812-2'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -65,7 +59,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'BSN MEDICAL SPA.'.trim().toUpperCase(),
 			rut: '76.186.732-6'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -74,7 +67,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'COMERCIALIZADORA LAIN CHILE'.trim().toUpperCase(),
 			rut: '76.264.506-8'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -83,7 +75,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'GEDEON RICHTER SPA'.trim().toUpperCase(),
 			rut: '76.307.190-1'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -92,7 +83,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'LABORATORIO GDM LTDA.'.trim().toUpperCase(),
 			rut: '76.329.633-4'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -101,7 +91,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'ALPHA PHARMA SPA.'.trim().toUpperCase(),
 			rut: '76.479.314-5'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -110,7 +99,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'OPKO CHILE S.A.'.trim().toUpperCase(),
 			rut: '76.669.630-9'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -119,7 +107,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'FRESENIUS KABI CHILE LIMITADA'.trim().toUpperCase(),
 			rut: '77.478.120-K'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -128,7 +115,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'LABORATORIO CHILE S.A.'.trim().toUpperCase(),
 			rut: '77.596.940-7'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -137,7 +123,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'SASF'.trim().toUpperCase(),
 			rut: '77.606.220-0'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -146,7 +131,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'TEXTIL SUPER LIMITADA '.trim().toUpperCase(),
 			rut: '78.238.490-2'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -155,7 +139,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'PHARMAMERICA '.trim().toUpperCase(),
 			rut: '78.914.950-K'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -164,7 +147,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'INMED DROGUERIA LTDA'.trim().toUpperCase(),
 			rut: '86.821.000-1'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -173,7 +155,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'INSTITUTO SANITAS S.A.'.trim().toUpperCase(),
 			rut: '90.073.000-4'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -182,7 +163,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'LABORATORIO SANDERSON S.A.'.trim().toUpperCase(),
 			rut: '91.546.000-3'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -191,7 +171,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'SOCOFAR'.trim().toUpperCase(),
 			rut: '91.575.000-1'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -200,7 +179,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'LABORATORIOS RECALCINE S.A.'.trim().toUpperCase(),
 			rut: '91.637.000-8'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -209,7 +187,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'LABORATORIO SILESIA S.A'.trim().toUpperCase(),
 			rut: '91.871.000-0'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -218,7 +195,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'DROGUERIA HOFMANN SAC '.trim().toUpperCase(),
 			rut: '92.288.000-K'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -227,7 +203,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'LABORATORIO LAFI LTDA.'.trim().toUpperCase(),
 			rut: '94.398.000-4'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -236,7 +211,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'LABORATORIOS SMB FARMA S.A.'.trim().toUpperCase(),
 			rut: '96.544.130-1'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -245,7 +219,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'FARMA STORAGE'.trim().toUpperCase(),
 			rut: '96.699.730-3'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -254,7 +227,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'LABORATORIO DENTAID SA'.trim().toUpperCase(),
 			rut: '96.718.630-9'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -263,7 +235,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'B.BRAUN'.trim().toUpperCase(),
 			rut: '96.756.540-7'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -272,7 +243,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'NOVOFARMA S.A.'.trim().toUpperCase(),
 			rut: '96.945.670-2'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -281,7 +251,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'SANFER CHILE S.A.'.trim().toUpperCase(),
 			rut: '76.551.792-3'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -290,7 +259,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'BLUEMEDICAL LTDA'.trim().toUpperCase(),
 			rut: '76.116.604-2'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -299,7 +267,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'OPTIVISION '.trim().toUpperCase(),
 			rut: '77.190.880-2'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -308,7 +275,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'EXELTIS CHILE SPA'.trim().toUpperCase(),
 			rut: '76.383.221-K'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -317,7 +283,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'ITF LABOMED LTDA'.trim().toUpperCase(),
 			rut: '96.884.770-8'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -326,7 +291,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'LABVITALIS S.A.'.trim().toUpperCase(),
 			rut: '76.642.770-7'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -335,7 +299,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'MADEGOM'.trim().toUpperCase(),
 			rut: '84.609.600-0'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -344,7 +307,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'LABORATORIO DIFEM SA.'.trim().toUpperCase(),
 			rut: '79.581.120-6'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -353,7 +315,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'SOC.COMERCIAL IMPROFAR LTDA.'.trim().toUpperCase(),
 			rut: '76.071.981-1'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -362,7 +323,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'MEDBIOTE SOCIEDAD'.trim().toUpperCase(),
 			rut: '76.280.494-8'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -371,7 +331,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'ETHON PHARMACEUTICALS'.trim().toUpperCase(),
 			rut: '76.956.140-4'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -380,7 +339,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'MUNNICH PHARMA MEDICAL LTDA.'.trim().toUpperCase(),
 			rut: '80.447.400-5'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -389,7 +347,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'RECBEN XENERICS FARMACEUTICA LTDA.'.trim().toUpperCase(),
 			rut: '78.740.450-2'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -398,7 +355,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'CENCOMEX S.A'.trim().toUpperCase(),
 			rut: '96.515.660-7'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -407,7 +363,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'LABORATORIO PASTEUR S.A'.trim().toUpperCase(),
 			rut: '87.674.400-7'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -416,7 +371,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'VIT ALSEC SPA'.trim().toUpperCase(),
 			rut: '76.325.278-7'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -425,7 +379,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'LABORATORIO VALMA S.A'.trim().toUpperCase(),
 			rut: '80.048.900-8'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -434,7 +387,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'EXXIMMED 2000 SPA'.trim().toUpperCase(),
 			rut: '78.060.400-K'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -443,7 +395,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'GLASS LAB'.trim().toUpperCase(),
 			rut: '76.063.620-7'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -452,7 +403,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'GLOBAL PHARMA'.trim().toUpperCase(),
 			rut: '76.389.383-9'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -461,7 +411,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'HELIOS'.trim().toUpperCase(),
 			rut: '93.791.000-2'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -470,7 +419,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'LORENZO JIMENEZ'.trim().toUpperCase(),
 			rut: '79.636.400-9'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -479,7 +427,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'RE-MED LTDA'.trim().toUpperCase(),
 			rut: '76.628.610-0'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -488,7 +435,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'RM SPA'.trim().toUpperCase(),
 			rut: '76.810.668-1'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -497,7 +443,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'MIDICALTEK'.trim().toUpperCase(),
 			rut: '96.696.000-0'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -506,7 +451,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'CHEMO PHARMA'.trim().toUpperCase(),
 			rut: '96.026.000-7'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -515,7 +459,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'PHARMA TRADE'.trim().toUpperCase(),
 			rut: '96.670.640-6'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -524,7 +467,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'BIOMEDIKA SPA'.trim().toUpperCase(),
 			rut: '76.732.365-4'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -533,7 +475,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'BPH'.trim().toUpperCase(),
 			rut: '96.519.830-K'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -542,7 +483,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'BIOSANO'.trim().toUpperCase(),
 			rut: '88.597.500-3'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -551,7 +491,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'REUTTER'.trim().toUpperCase(),
 			rut: '81.210.400-4'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -560,7 +499,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'SASF COMERCIAL'.trim().toUpperCase(),
 			rut: '76.930.423-1'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -569,7 +507,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'SANOFI'.trim().toUpperCase(),
 			rut: '92.251.000-8'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -578,7 +515,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'CONVATEC'.trim().toUpperCase(),
 			rut: '76.020.266-5'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -587,7 +523,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'GEMCO'.trim().toUpperCase(),
 			rut: '76.142.730-K'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -596,7 +531,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'EEE'.trim().toUpperCase(),
 			rut: '76.845.730-1'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -605,7 +539,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'MEGAMEDICAL SPA'.trim().toUpperCase(),
 			rut: '76.888.064-6'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -614,7 +547,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'PHARMAVISAM'.trim().toUpperCase(),
 			rut: '76.055.804-4'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -623,7 +555,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'CEGAMED CHILE S.A.'.trim().toUpperCase(),
 			rut: '99.593.170-2'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -632,7 +563,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'TREMA DENTAL LIMITADA'.trim().toUpperCase(),
 			rut: '76.128.840-7'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -641,7 +571,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'MEDICINAE SPA'.trim().toUpperCase(),
 			rut: '76.772.596-5'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -650,7 +579,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'HOSPIFARMA'.trim().toUpperCase(),
 			rut: '76.133.312-7'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -659,7 +587,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'GRUNENTHAL'.trim().toUpperCase(),
 			rut: '81.323.800-4'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -668,7 +595,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'INVERSIONES C & F SPA'.trim().toUpperCase(),
 			rut: '76.857.891-5'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -677,7 +603,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'CENABAST'.trim().toUpperCase(),
 			rut: '61.608.700-2'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -686,7 +611,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'CODIMED'.trim().toUpperCase(),
 			rut: '78.124.770-7'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -695,7 +619,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'PHARMAVISION SPA'.trim().toUpperCase(),
 			rut: '76.862.713-4'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -704,7 +627,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'NEMO CHILE S.A.'.trim().toUpperCase(),
 			rut: '76.215.260-6'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -713,7 +635,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'TECNIKA S.A.'.trim().toUpperCase(),
 			rut: '96.625.950-7'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -722,7 +643,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'DROGUERIA FARMOQUIMICA DEL PACIFICO SPA'.trim().toUpperCase(),
 			rut: '77.781.470-2'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -731,7 +651,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'BLUNDING'.trim().toUpperCase(),
 			rut: '79.744.580-0'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -740,7 +659,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'EUROFARMA S.A.'.trim().toUpperCase(),
 			rut: '79.802.770-0'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -749,7 +667,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'PLARESA'.trim().toUpperCase(),
 			rut: '9.934.320-6'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -758,7 +675,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'Input-medical'.trim().toUpperCase(),
 			rut: '76.645.686-3'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -767,7 +683,6 @@ export function cargarProveedores(req: Request, res: Response) {
 			},
 		},
 		{
-			id: uuidv4(),
 			nombre: 'TECNOPAPEL'.trim().toUpperCase(),
 			rut: '76.075.072-7'.trim().toUpperCase().replace(/\./g, '').replace('-', ''),
 			responsable: {
@@ -777,10 +692,7 @@ export function cargarProveedores(req: Request, res: Response) {
 		},
 	];
 
-	proveedores.forEach((element) => {
-		const proveedorNuevo = new Proveedor(element);
-		proveedorNuevo.save();
-	});
+	Proveedor.insertMany(proveedores);
 
 	return res.status(200).json({ mensaje: 'ok' });
 }
@@ -3974,7 +3886,7 @@ export function cargarArsenal(req: Request, res: Response) {
 			responsable: { usuarioId: '0000-0000-0000-0000-0000', nombre: 'Administrador' },
 		},
 	];
-	
+
 	arsenales.forEach((element) => {
 		const arsenalNuevo = new Arsenal(element);
 		arsenalNuevo.save();

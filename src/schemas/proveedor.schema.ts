@@ -2,7 +2,6 @@ import { Schema } from 'mongoose';
 import idSchema from './id.schema';
 
 const proveedorSchema = new Schema({
-	id: idSchema,
 	nombre: {
 		type: String,
 		required: true,
